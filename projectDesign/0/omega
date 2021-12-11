@@ -1,0 +1,90 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  9
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    format      binary;
+    class       volScalarField;
+    location    "0";
+    object      omega;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+dimensions      [0 0 -1 0 0 0 0];
+
+internalField   uniform 1.78;
+
+boundaryField
+{
+    frontAndBack
+    {
+        type            slip;
+    }
+    inlet
+    {
+        type            fixedValue;
+        value           uniform 1.78;
+    }
+    outlet
+    {
+        type            inletOutlet;
+        inletValue      uniform 1.78;
+        value           uniform 1.78;
+    }
+    lowerWall
+    {
+        type            omegaWallFunction;
+        value           uniform 1.78;
+    }
+    upperWall
+    {
+        type            slip;
+    }
+    trailer
+    {
+        type            omegaWallFunction;
+        value           uniform 1.78;
+    }
+    cabin
+    {
+        type            omegaWallFunction;
+        value           uniform 1.78;
+    }
+    wheel_fl
+    {
+        type            omegaWallFunction;
+        value           uniform 1.78;
+    }
+    wheel_fr
+    {
+        type            omegaWallFunction;
+        value           uniform 1.78;
+    }
+    wheel_rl
+    {
+        type            omegaWallFunction;
+        value           uniform 1.78;
+    }
+    wheel_rr
+    {
+        type            omegaWallFunction;
+        value           uniform 1.78;
+    }
+    wheel_mr
+    {
+        type            omegaWallFunction;
+        value           uniform 1.78;
+    }
+    wheel_ml
+    {
+        type            omegaWallFunction;
+        value           uniform 1.78;
+    }
+}
+
+
+// ************************************************************************* //
